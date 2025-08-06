@@ -3,7 +3,7 @@
 **Problem Link:**  
 [LeetCode 3479 - Fruits Into Baskets III](https://leetcode.com/problems/fruits-into-baskets-iii/) 
 
-You are given two arrays of integers, `fruits` and `baskets`, each of length `n`, where:
+You are given two arrays of integers, `fruits` and `baskets`, each of length `n`, where: 
 
 - `fruits[i]` represents the quantity of the `iᵗʰ` type of fruit.
 - `baskets[j]` represents the capacity of the `jᵗʰ` basket.
