@@ -1,7 +1,7 @@
 # Day 6 - Fruits Into Baskets III
 
 **Problem Link:**  
-[LeetCode 3479 - Fruits Into Baskets III](https://leetcode.com/problems/fruits-into-baskets-iii/) *(Premium)*
+[LeetCode 3479 - Fruits Into Baskets III](https://leetcode.com/problems/fruits-into-baskets-iii/) 
 
 You are given two arrays of integers, `fruits` and `baskets`, each of length `n`, where:
 
