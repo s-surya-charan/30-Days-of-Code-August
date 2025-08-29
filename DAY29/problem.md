@@ -46,10 +46,13 @@ Return the number of possible pairs `(x, y)` such that **Alice wins the game**.
 **Input:**
 
 `n = 1, m = 1`
+
 **Output:**
 
 `0`
+
 **Explanation:**
+
 - No pairs satisfy the conditions described in the statement.
 ---
 
