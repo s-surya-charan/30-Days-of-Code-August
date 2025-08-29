@@ -29,26 +29,27 @@ Return the number of possible pairs `(x, y)` such that **Alice wins the game**.
 ## Example 1
 
 **Input:**
-n = 3, m = 2
-Output:
-3
+`n = 3, m = 2`
 
-Explanation:
-The following pairs satisfy the conditions:
+**Output:**
+`3`
 
-(1, 2)
+**Explanation:**
+- The following pairs satisfy the conditions:
+- (1, 2)
+- (3, 2)
+- (2, 1)
 
-(3, 2)
+---
 
-(2, 1)
+## Example 2
+**Input:**
 
-Example 2
-Input:
+`n = 1, m = 1`
+**Output:**
 
-n = 1, m = 1
-Output:
-
-0
-Explanation:
-No pairs satisfy the conditions described in the statement.
+`0`
+**Explanation:**
+- No pairs satisfy the conditions described in the statement.
+---
 
