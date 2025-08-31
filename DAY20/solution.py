@@ -1,19 +1,24 @@
 class Solution:
-    def countSquares(self, matrix: List[List[int]]) -> int:
-        if not matrix or not matrix[0]:
-            return 0
-
-        m, n = len(matrix), len(matrix[0])
-        res = 0
+    def numSubmat(self, mat):
+        m, n = len(mat), len(mat[0])
+        heights = [0] * n
+        total = 0
 
         for i in range(m):
             for j in range(n):
-                if matrix[i][j] == 1 and i > 0 and j > 0:
-                    matrix[i][j] = min(
-                        matrix[i-1][j],
-                        matrix[i][j-1],
-                        matrix[i-1][j-1]
-                    ) + 1
-                res += matrix[i][j]
+                if mat[i][j] == 1:
+                    heights[j] += 1
+                else:
+                    heights[j] = 0
 
-        return res
+            for j in range(n):
+                min_height = heights[j]
+                for k in range(j, -1, -1): 
+                    if heights[k] == 0:
+                        break
+                    min_height = min(min_height, heights[k])
+                    total += min_height
+
+        return total
+
+        

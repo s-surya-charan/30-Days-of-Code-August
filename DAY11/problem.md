@@ -1,69 +1,63 @@
-# Day 11 - Range Product Queries of Powers
+# Day 12 - Ways to Express an Integer as Sum of Powers
 
 **Problem Link:**  
-[LeetCode 2438 - Range Product Queries of Powers](https://leetcode.com/problems/range-product-queries-of-powers/)
+[LeetCode 2787 - Ways to Express an Integer as Sum of Powers](https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/)
 
 ---
 
-Given a positive integer `n`, there exists a **0-indexed** array called `powers`, composed of the **minimum number of powers of 2** that sum to `n`.  
+Given two positive integers `n` and `x`, you need to determine the **number of ways** to express `n` as the sum of the **x-th power of unique positive integers**.
 
-- The array is sorted in **non-decreasing order**.
-- There is **only one unique way** to form the array.
+Formally, count the number of distinct sets of integers `[n₁, n₂, ..., nₖ]` such that:
+n = n₁ˣ + n₂ˣ + ... + nₖˣ
 
-You are also given a **0-indexed** 2D integer array `queries`, where `queries[i] = [leftᵢ, rightᵢ]`.  
-
-Each query asks for the **product** of all `powers[j]` where `leftᵢ ≤ j ≤ rightᵢ`.
-
-Since the answer may be **too large**, return each query's result **modulo** `10⁹ + 7`.
+Since the answer can be **very large**, return the result **modulo** `10⁹ + 7`.
 
 ---
 
 ### Rules:
 
-- `powers` is formed by **breaking `n` into powers of 2** with the smallest possible length.
-- For each query:
-  - Multiply the elements of `powers` from index `leftᵢ` to `rightᵢ`.
-  - Apply modulo `10⁹ + 7`.
-- There will be **at least one** query.
+- Each integer can be used **at most once** in the sum.
+- The integers in the sum must be **positive**.
+- The order of numbers does **not** matter (`[1,3]` is the same as `[3,1]`).
+- Apply modulo `10⁹ + 7` to the final answer.
 
 ---
 
 ### Return:
 
-An array `answers` where `answers[i]` is the **product result** for query `i`, modulo `10⁹ + 7`.
+An integer representing the **number of unique ways** to represent `n` as the sum of `x`-th powers.
 
 ---
 
 ### Example 1:
 
 **Input:**  
-`n = 15, queries = [[0,1],[2,2],[0,3]]`
+`n = 10, x = 2`
 
 **Output:**  
-`[2, 4, 64]`
+`1`
 
 **Explanation:**  
-- For `n = 15`, `powers = [1, 2, 4, 8]`.
-- Query 1: `powers[0] * powers[1] = 1 * 2 = 2`  
-- Query 2: `powers[2] = 4`  
-- Query 3: `1 * 2 * 4 * 8 = 64`  
+We can express `n` in only one way:  
+- `3² + 1² = 9 + 1 = 10`  
 
-Modulo `10⁹ + 7` doesn’t change results → `[2, 4, 64]`.
+No other combination of unique positive integers raised to power `2` adds up to `10`.
 
 ---
 
 ### Example 2:
 
 **Input:**  
-`n = 2, queries = [[0,0]]`
+`n = 4, x = 1`
 
 **Output:**  
-`[2]`
+`2`
 
 **Explanation:**  
-- For `n = 2`, `powers = [2]`.  
-- Query 1: `powers[0] = 2`  
-- Result after modulo → `[2]`.
+We can express `n` in two ways:  
+- `4¹ = 4`  
+- `3¹ + 1¹ = 3 + 1 = 4`
 
 ---
+
 

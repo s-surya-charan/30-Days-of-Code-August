@@ -1,65 +1,65 @@
-# Day X - Maximum 69 Number  
+# Day 17 - New 21 Game  
 
-**Problem Link:** [LeetCode 1323 - Maximum 69 Number](https://leetcode.com/problems/maximum-69-number/)  
+**Problem Link:** [LeetCode 837 - New 21 Game](https://leetcode.com/problems/new-21-game/)  
 
 ---
 
-You are given a positive integer **num** consisting only of digits **6** and **9**.  
+Alice plays a game loosely based on the card game **"21"**:  
 
-Return the **maximum number** you can get by changing **at most one digit**:  
-- `6 → 9`  
-- `9 → 6`  
+- Alice starts with **0 points**.  
+- While she has **less than `k` points**, she continues drawing numbers.  
+- Each draw gives a random integer from **[1, maxPts]** (inclusive), all equally likely.  
+- Alice **stops drawing** once she reaches **k or more** points.  
+
+Return the **probability** that Alice ends the game with **n or fewer points**.  
+
+Answers within `1e-5` of the actual answer are accepted.  
 
 ---
 
 ### Rules:
-- You can change **at most one digit**.  
-- Changing is optional (if the number is already maximum).  
-- The number only contains digits `6` and `9`.  
+- Alice draws numbers until she reaches at least **k**.  
+- Each draw is uniformly random from **1 → maxPts**.  
+- Alice stops immediately when her score ≥ `k`.  
 
 ---
 
 ### Return:
-- The **maximum possible integer** after changing at most one digit.  
+- The **probability** that Alice finishes with **≤ n points**.  
 
 ---
 
 ### Example 1:
 **Input:**  
-num = 9669  
+n = 10, k = 1, maxPts = 10  
 
 **Output:**  
-9969  
+1.00000  
 
 **Explanation:**  
-- Changing the first digit results in 6669.  
-- Changing the second digit results in 9969.  
-- Changing the third digit results in 9699.  
-- Changing the fourth digit results in 9666.  
-The maximum number is **9969**.  
+Alice draws only once, ending with scores between 1–10 → always ≤ 10.  
 
 ---
 
 ### Example 2:
 **Input:**  
-num = 9996  
+n = 6, k = 1, maxPts = 10  
 
 **Output:**  
-9999  
+0.60000  
 
 **Explanation:**  
-Changing the last digit 6 → 9 gives the maximum number.  
+Alice draws once → possible scores: `1–10`.  
+In 6 out of 10 cases, she ends ≤ 6 → probability = 0.6.  
 
 ---
 
 ### Example 3:
 **Input:**  
-num = 9999  
+n = 21, k = 17, maxPts = 10  
 
 **Output:**  
-9999  
-
-**Explanation:**  
-No change is needed since the number is already maximum.  
+0.73278  
 
 ---
+

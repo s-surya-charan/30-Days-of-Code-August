@@ -1,63 +1,66 @@
-# Day 12 - Ways to Express an Integer as Sum of Powers
+# Day 13 - Power of Three
 
 **Problem Link:**  
-[LeetCode 2787 - Ways to Express an Integer as Sum of Powers](https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/)
+[LeetCode 326 - Power of Three](https://leetcode.com/problems/power-of-three/)
 
 ---
 
-Given two positive integers `n` and `x`, you need to determine the **number of ways** to express `n` as the sum of the **x-th power of unique positive integers**.
+Given an integer `n`, return **true** if it is a **power of three**, otherwise return **false**.
 
-Formally, count the number of distinct sets of integers `[n₁, n₂, ..., nₖ]` such that:
-n = n₁ˣ + n₂ˣ + ... + nₖˣ
-
-Since the answer can be **very large**, return the result **modulo** `10⁹ + 7`.
+An integer `n` is a power of three if there exists an integer `x` such that:  n == 3ˣ
 
 ---
 
 ### Rules:
 
-- Each integer can be used **at most once** in the sum.
-- The integers in the sum must be **positive**.
-- The order of numbers does **not** matter (`[1,3]` is the same as `[3,1]`).
-- Apply modulo `10⁹ + 7` to the final answer.
+- You must determine if `n` can be expressed as 3 raised to some integer power.
+- Negative numbers and zero **cannot** be powers of three.
+- The power `x` must be an **integer**.
 
 ---
 
 ### Return:
 
-An integer representing the **number of unique ways** to represent `n` as the sum of `x`-th powers.
+- `true` if `n` is a power of three.
+- `false` otherwise.
 
 ---
 
 ### Example 1:
 
 **Input:**  
-`n = 10, x = 2`
+`n = 27`
 
 **Output:**  
-`1`
+`true`
 
 **Explanation:**  
-We can express `n` in only one way:  
-- `3² + 1² = 9 + 1 = 10`  
-
-No other combination of unique positive integers raised to power `2` adds up to `10`.
+27 = 3³
 
 ---
 
 ### Example 2:
 
 **Input:**  
-`n = 4, x = 1`
+`n = 0`
 
 **Output:**  
-`2`
+`false`
 
 **Explanation:**  
-We can express `n` in two ways:  
-- `4¹ = 4`  
-- `3¹ + 1¹ = 3 + 1 = 4`
+No integer `x` satisfies 3ˣ = 0.
 
 ---
 
+### Example 3:
 
+**Input:**  
+`n = -1`
+
+**Output:**  
+`false`
+
+**Explanation:**  
+No integer `x` satisfies 3ˣ = -1.
+
+---

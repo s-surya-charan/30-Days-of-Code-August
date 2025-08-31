@@ -1,7 +1,7 @@
 class Solution:
-    def largestGoodInteger(self, num: str) -> str:
-        best = ""
-        for i in range(len(num) - 2):
-            if num[i] == num[i+1] == num[i+2]:
-                best = max(best, num[i:i+3])
-        return best
+    def isPowerOfFour(self, n: int) -> bool:
+        if n <= 0:
+            return False
+        while n % 4 == 0:
+            n //= 4
+        return n == 1

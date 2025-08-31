@@ -1,89 +1,79 @@
-# Day 27 - Length of Longest V-Shaped Diagonal Segment
+# Day 28 - Sort Matrix by Diagonals
+
+**Problem Link:** [LeetCode 3446 - Sort Matrix by Diagonals](https://leetcode.com/problems/sort-matrix-by-diagonals/)
+
+---
 
 ## Problem Statement
 
-You are given a 2D integer matrix `grid` of size `n x m`, where each element is either `0`, `1`, or `2`.
+You are given an **n × n** square integer matrix `grid`. Return the matrix such that:
 
-A **V-shaped diagonal segment** is defined as:
-
-* The segment **starts with 1**.
-* The subsequent elements follow this infinite sequence: `2, 0, 2, 0, ....`
-* The segment:
-
-  * Starts along a diagonal direction (**↘, ↙, ↖, or ↗**).
-  * Continues the sequence in the same diagonal direction.
-  * Makes at most **one clockwise 90-degree turn** to another diagonal direction while maintaining the sequence.
-
-Return the **length of the longest V-shaped diagonal segment**. If no valid segment exists, return `0`.
+1. The **diagonals** in the **bottom-left triangle** (including the main diagonal) are sorted in **non-increasing order**.  
+2. The **diagonals** in the **top-right triangle** are sorted in **non-decreasing order**.  
 
 ---
 
-## Examples
+## Example 1
 
-**Example 1:**
+**Input:**
+grid = [[1,7,3],
+[9,8,2],
+[4,5,6]]
 
-```
-Input: grid = [[2,2,1,2,2],[2,0,2,2,0],[2,0,1,1,0],[1,0,2,2,2],[2,0,0,2,2]]
-Output: 5
-```
+makefile
+Copy code
 
-Explanation: The longest V-shaped diagonal segment has a length of 5:
+**Output:**
+[[8,2,3],
+[9,6,7],
+[4,5,1]]
 
-```
-(0,2) → (1,3) → (2,4), turn, (3,3) → (4,2)
-```
+**Explanation:**
 
----
+- Bottom-left diagonals (sorted non-increasing):
+  - [1,8,6] → [8,6,1]  
+  - [9,5] and [4] remain unchanged  
 
-**Example 2:**
-
-```
-Input: grid = [[2,2,2,2,2],[2,0,2,2,0],[2,0,1,1,0],[1,0,2,2,2],[2,0,0,2,2]]
-Output: 4
-```
-
-Explanation: The longest segment is:
-
-```
-(2,3) → (3,2), turn, (2,1) → (1,0)
-```
+- Top-right diagonals (sorted non-decreasing):
+  - [7,2] → [2,7]  
+  - [3] remains unchanged  
 
 ---
 
-**Example 3:**
+## Example 2
 
-```
-Input: grid = [[1,2,2,2,2],[2,2,2,2,0],[2,0,0,0,0],[0,0,2,2,2],[2,0,0,2,0]]
-Output: 5
-```
+**Input:**
+grid = [[0,1],
+[1,2]]
 
-Explanation: The longest segment is a straight diagonal:
 
-```
-(0,0) → (1,1) → (2,2) → (3,3) → (4,4)
-```
+**Output:**
+[[2,1],
+[1,0]]
+
+
+**Explanation:**
+- Bottom-left diagonal [0,2] → [2,0] (non-increasing)  
+- Others remain unchanged  
 
 ---
 
-**Example 4:**
+## Example 3
 
-```
-Input: grid = [[1]]
-Output: 1
-```
+**Input:**
+grid = [[1]]
 
-Explanation: Only one element `(0,0)` forms the segment.
+
+**Output:**
+[[1]]
+
+**Explanation:**  
+Single element diagonals remain unchanged.  
 
 ---
 
 ## Constraints
 
-* `n == grid.length`
-* `m == grid[i].length`
-* `1 <= n, m <= 500`
-* `grid[i][j]` is either `0`, `1`, or `2`.
-
----
-
-that returns the **length of the longest V-shaped diagonal segment**.
-
+- `grid.length == grid[i].length == n`
+- `1 <= n <= 10`
+- `-10^5 <= grid[i][j] <= 10^5`

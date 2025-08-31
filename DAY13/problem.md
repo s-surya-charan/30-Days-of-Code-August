@@ -1,66 +1,79 @@
-# Day 13 - Power of Three
+<h1>Day 14  - Largest 3-Same-Digit Number in String</h1>
 
-**Problem Link:**  
-[LeetCode 326 - Power of Three](https://leetcode.com/problems/power-of-three/)
+<p><strong>Problem Link:</strong><br>
+  <a href="https://leetcode.com/problems/largest-3-same-digit-number-in-string/" target="_blank" rel="noopener noreferrer">
+    LeetCode 2264 - Largest 3-Same-Digit Number in String
+  </a>
+</p>
 
----
+<hr>
 
-Given an integer `n`, return **true** if it is a **power of three**, otherwise return **false**.
+<p>
+  You are given a string <code>num</code> representing a large integer.<br>
+  An integer is called <strong>good</strong> if it satisfies:
+</p>
+<ol>
+  <li>It is a <strong>substring</strong> of <code>num</code> with <strong>length 3</strong>.</li>
+  <li>It consists of <strong>only one unique digit</strong>.</li>
+</ol>
 
-An integer `n` is a power of three if there exists an integer `x` such that:  n == 3ˣ
+<p>
+  Return the <strong>maximum good integer</strong> as a string, or an empty string <code>""</code> if no such integer exists.
+</p>
 
----
+<hr>
 
-### Rules:
+<h3>Rules:</h3>
+<ul>
+  <li>The substring must have <strong>exactly 3</strong> characters.</li>
+  <li>All three characters must be the <strong>same digit</strong>.</li>
+  <li><strong>Leading zeroes</strong> are allowed.</li>
+  <li>If multiple good integers exist, return the <strong>largest</strong> one (by numeric value).</li>
+</ul>
 
-- You must determine if `n` can be expressed as 3 raised to some integer power.
-- Negative numbers and zero **cannot** be powers of three.
-- The power `x` must be an **integer**.
+<hr>
 
----
+<h3>Return:</h3>
+<ul>
+  <li>The <strong>maximum good integer</strong> as a string.</li>
+  <li>If none exists, return <code>""</code>.</li>
+</ul>
 
-### Return:
+<hr>
 
-- `true` if `n` is a power of three.
-- `false` otherwise.
+<h3>Example 1:</h3>
+<pre><code><strong>Input:</strong>
+num = "6777133339"
 
----
+<strong>Output:</strong>
+"777"
 
-### Example 1:
+<strong>Explanation:</strong>
+Possible good integers: "777" and "333".
+"777" is larger, so we return it.
+</code></pre>
 
-**Input:**  
-`n = 27`
+<h3>Example 2:</h3>
+<pre><code><strong>Input:</strong>
+num = "2300019"
 
-**Output:**  
-`true`
+<strong>Output:</strong>
+"000"
 
-**Explanation:**  
-27 = 3³
+<strong>Explanation:</strong>
+Only "000" is a valid good integer.
+</code></pre>
 
----
+<h3>Example 3:</h3>
+<pre><code><strong>Input:</strong>
+num = "42352338"
 
-### Example 2:
+<strong>Output:</strong>
+""
 
-**Input:**  
-`n = 0`
+<strong>Explanation:</strong>
+No substring of length 3 consists of the same digit.
+</code></pre>
 
-**Output:**  
-`false`
+<hr>
 
-**Explanation:**  
-No integer `x` satisfies 3ˣ = 0.
-
----
-
-### Example 3:
-
-**Input:**  
-`n = -1`
-
-**Output:**  
-`false`
-
-**Explanation:**  
-No integer `x` satisfies 3ˣ = -1.
-
----

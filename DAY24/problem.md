@@ -1,59 +1,37 @@
-# Day 24 - Longest Subarray of 1's After Deleting One Element
+# Day 25 - Diagonal Traverse
 
-**Problem Link:** [LeetCode 1493 - Longest Subarray of 1's After Deleting One Element](https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/)
+**Problem Link:** [LeetCode 498 - Diagonal Traverse](https://leetcode.com/problems/diagonal-traverse/)
 
 ---
 
-You are given a **binary array** `nums`.
-
-You must **delete exactly one element** from it.
-
-Return the size of the **longest non-empty subarray containing only `1's`** in the resulting array.
-If no such subarray exists, return `0`.
+Given an `m x n` matrix `mat`, return an array of all the elements of the array in a **diagonal order**.
 
 ---
 
 ### Example 1:
 
 **Input:**
-`nums = [1,1,0,1]`
+`mat = [[1,2,3],[4,5,6],[7,8,9]]`
 
 **Output:**
-`3`
-
-**Explanation:**
-After deleting the `0` at index 2, the array becomes `[1,1,1]`, which has length 3.
+`[1,2,4,7,5,3,6,8,9]`
 
 ---
 
 ### Example 2:
 
 **Input:**
-`nums = [0,1,1,1,0,1,1,0,1]`
+`mat = [[1,2],[3,4]]`
 
 **Output:**
-`5`
-
-**Explanation:**
-After deleting the `0` at index 4, the array becomes `[0,1,1,1,1,1,0,1]`.
-The longest subarray of only `1's` is `[1,1,1,1,1]` of length 5.
-
----
-
-### Example 3:
-
-**Input:**
-`nums = [1,1,1]`
-
-**Output:**
-`2`
-
-**Explanation:**
-You must delete one element, so the longest possible subarray is `[1,1]` of length 2.
+`[1,2,3,4]`
 
 ---
 
 ### Constraints:
 
-* `1 <= nums.length <= 10^5`
-* `nums[i]` is either `0` or `1`
+* `m == mat.length`
+* `n == mat[i].length`
+* `1 <= m, n <= 10^4`
+* `1 <= m * n <= 10^4`
+* `-10^5 <= mat[i][j] <= 10^5`

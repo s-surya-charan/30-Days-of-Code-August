@@ -1,56 +1,44 @@
-# Day 21 - Count Submatrices With All Ones
+# Day 22 - Find the Minimum Area to Cover All Ones I
 
-**Problem Link:** [LeetCode 1504 - Count Submatrices With All Ones](https://leetcode.com/problems/count-submatrices-with-all-ones/)
+**Problem Link:** [LeetCode 3195 - Find the Minimum Area to Cover All Ones I](https://leetcode.com/problems/find-the-minimum-area-to-cover-all-ones-i/)
 
 ---
 
-You are given an `m x n` **binary matrix** `mat`.
-Return the **number of submatrices that have all ones**.
+You are given a **2D binary array** `grid`.
 
-A submatrix is a rectangular part of the matrix that is contiguous in both rows and columns.
+Find a rectangle with horizontal and vertical sides and the **smallest area**, such that **all the 1's in `grid` lie inside this rectangle**.
+
+Return the **minimum possible area** of the rectangle.
 
 ---
 
 ### Example 1:
 
 **Input:**
-`mat = [[1,0,1],[1,1,0],[1,1,0]]`
+`grid = [[0,1,0],[1,0,1]]`
 
 **Output:**
-`13`
+`6`
 
 **Explanation:**
+The smallest rectangle has:
 
-* Rectangles of size 1x1: 6
-* Rectangles of size 1x2: 2
-* Rectangles of size 2x1: 3
-* Rectangles of size 2x2: 1
-* Rectangles of size 3x1: 1
-
-Total = 13.
+* Height = 2
+* Width = 3
+  So, area = 2 × 3 = 6.
 
 ---
 
 ### Example 2:
 
 **Input:**
-`mat = [[0,1,1,0],[0,1,1,1],[1,1,1,0]]`
+`grid = [[1,0],[0,0]]`
 
 **Output:**
-`24`
+`1`
 
 **Explanation:**
-
-* Rectangles of size 1x1: 8
-* Rectangles of size 1x2: 5
-* Rectangles of size 1x3: 2
-* Rectangles of size 2x1: 4
-* Rectangles of size 2x2: 2
-* Rectangles of size 3x1: 2
-* Rectangles of size 3x2: 1
-
-Total = 24.
+The smallest rectangle is just the single cell with `1`.
+So, area = 1 × 1 = 1.
 
 ---
-
-

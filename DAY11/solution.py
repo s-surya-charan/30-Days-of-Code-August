@@ -1,18 +1,19 @@
+MOD = 10 ** 9 + 7
 class Solution:
-    def productQueries(self, n: int, queries: List[List[int]]) -> List[int]:
-        M = 10**9 + 7
+    def numberOfWays(self, n: int, x: int) -> int:
         powers = []
+        i = 1
+        while True:
+            p = pow(i, x)
+            if p > n:
+                break
+            powers.append(p)
+            i += 1
         
-        # Build powers array
-        for i in range(32):
-            if (n & (1 << i)) != 0:  # ith bit is set
-                powers.append(1 << i)
+        dp = [0] * (n + 1)
+        dp[0] = 1
+        for p in powers:
+            for s in range(n, p - 1, -1):
+                dp[s] = (dp[s] + dp[s - p]) % MOD
+        return dp[n]
         
-        result = []
-        for start, end in queries:
-            product = 1
-            for i in range(start, end + 1):
-                product = (product * powers[i]) % M
-            result.append(product)
-        
-        return result

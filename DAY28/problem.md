@@ -1,79 +1,58 @@
-# Day 28 - Sort Matrix by Diagonals
+# Day 29 - Alice and Bob Playing Flower Game
 
-**Problem Link:** [LeetCode 3446 - Sort Matrix by Diagonals](https://leetcode.com/problems/sort-matrix-by-diagonals/)
+**Problem Link:** [LeetCode 3021 - Alice and Bob Playing Flower Game](https://leetcode.com/problems/alice-and-bob-playing-flower-game/)
 
 ---
 
 ## Problem Statement
 
-You are given an **n × n** square integer matrix `grid`. Return the matrix such that:
+Alice and Bob are playing a turn-based game on a field with **two lanes of flowers** between them.  
 
-1. The **diagonals** in the **bottom-left triangle** (including the main diagonal) are sorted in **non-increasing order**.  
-2. The **diagonals** in the **top-right triangle** are sorted in **non-decreasing order**.  
+- There are `x` flowers in the first lane.  
+- There are `y` flowers in the second lane.  
+
+The game proceeds as follows:
+
+1. Alice takes the **first turn**.  
+2. In each turn, a player must **choose one of the lanes** and pick **one flower** from that lane.  
+3. If after a turn, **there are no flowers left at all**, the current player **captures their opponent** and **wins the game**.  
+
+You are given two integers `n` and `m`.  
+
+- The number of flowers `x` in the first lane must be in the range `[1, n]`.  
+- The number of flowers `y` in the second lane must be in the range `[1, m]`.  
+
+Return the number of possible pairs `(x, y)` such that **Alice wins the game**.
 
 ---
 
 ## Example 1
 
 **Input:**
-grid = [[1,7,3],
-[9,8,2],
-[4,5,6]]
-
-makefile
-Copy code
+`n = 3, m = 2`
 
 **Output:**
-[[8,2,3],
-[9,6,7],
-[4,5,1]]
+`3`
 
 **Explanation:**
-
-- Bottom-left diagonals (sorted non-increasing):
-  - [1,8,6] → [8,6,1]  
-  - [9,5] and [4] remain unchanged  
-
-- Top-right diagonals (sorted non-decreasing):
-  - [7,2] → [2,7]  
-  - [3] remains unchanged  
+- The following pairs satisfy the conditions:
+- (1, 2)
+- (3, 2)
+- (2, 1)
 
 ---
 
 ## Example 2
-
 **Input:**
-grid = [[0,1],
-[1,2]]
 
+`n = 1, m = 1`
 
 **Output:**
-[[2,1],
-[1,0]]
 
+`0`
 
 **Explanation:**
-- Bottom-left diagonal [0,2] → [2,0] (non-increasing)  
-- Others remain unchanged  
 
+- No pairs satisfy the conditions described in the statement.
 ---
 
-## Example 3
-
-**Input:**
-grid = [[1]]
-
-
-**Output:**
-[[1]]
-
-**Explanation:**  
-Single element diagonals remain unchanged.  
-
----
-
-## Constraints
-
-- `grid.length == grid[i].length == n`
-- `1 <= n <= 10`
-- `-10^5 <= grid[i][j] <= 10^5`

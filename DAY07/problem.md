@@ -1,87 +1,59 @@
-# Day 7 - Find the Maximum Number of Fruits Collected
+# Day 8 - Soup Servings
 
 **Problem Link:**  
-[LeetCode 3363 - Find the Maximum Number of Fruits Collected](https://leetcode.com/problems/find-the-maximum-number-of-fruits-collected/)
+[LeetCode 808 - Soup Servings](https://leetcode.com/problems/soup-servings/)
 
 ---
 
-There is a game dungeon comprised of an `n x n` grid of rooms.
+You have **two soups**, `A` and `B`, each starting with `n` mL. On each turn, one of the following four serving operations is chosen **at random**, each with probability **0.25**:
 
-You are given a 2D array `fruits` of size `n x n`, where `fruits[i][j]` represents the number of fruits in the room at position `(i, j)`.
-
-Three children will play in this dungeon. They start at three **corner rooms**:
-- Child 1 starts at `(0, 0)`
-- Child 2 starts at `(0, n - 1)`
-- Child 3 starts at `(n - 1, 0)`
-
-They will **each make exactly `n - 1` moves** to reach the destination room `(n - 1, n - 1)`, **collecting all fruits** in the rooms they visit.
-
-Each child follows a specific movement rule:
-
-- **Child 1** (from `(0, 0)`): Can move to  
-  - `(i + 1, j)` → down  
-  - `(i, j + 1)` → right  
-  - `(i + 1, j + 1)` → diagonal down-right  
-
-- **Child 2** (from `(0, n - 1)`): Can move to  
-  - `(i + 1, j)` → down  
-  - `(i + 1, j - 1)` → diagonal down-left  
-  - `(i + 1, j + 1)` → diagonal down-right  
-
-- **Child 3** (from `(n - 1, 0)`): Can move to  
-  - `(i - 1, j + 1)` → diagonal up-right  
-  - `(i, j + 1)` → right  
-  - `(i + 1, j + 1)` → diagonal down-right  
-
-**Rules:**
-- A child collects **all fruits** in a room when entering it.
-- If **multiple children** enter the same room, **only one** of them collects the fruits. The room is considered **emptied** after that.
+1. Pour **100 mL** from **A** and **0 mL** from **B**  
+2. Pour **75 mL** from **A** and **25 mL** from **B**  
+3. Pour **50 mL** from **A** and **50 mL** from **B**  
+4. Pour **25 mL** from **A** and **75 mL** from **B**
 
 ---
 
-### Return the **maximum total number of fruits** the children can collect together after reaching `(n - 1, n - 1)`.
+### Rules:
+
+- If the operation requires more soup than remains in either type, you pour **all that remains**.
+- The amounts are poured **simultaneously** during that turn.
+- The process stops **when either soup runs out**.
+- If **both run out in the same turn**, it's considered a **tie**.
+
+---
+
+### Return:
+
+The **probability** that **soup A runs out first**, **plus** **half** the probability that **both run out simultaneously**.
+
+*Answers within `10^-5` of the true value are accepted.*
 
 ---
 
 ### Example 1:
 
 **Input:**  
-`fruits = [[1,2,3,4],[5,6,8,7],[9,10,11,12],[13,14,15,16]]`
+`n = 50`
 
 **Output:**  
-`100`
+`0.62500`
 
-**Explanation:**
+**Explanation:**  
+- Operations 1 & 2 → A runs out first → probability 1  
+- Operation 3 → both run out → probability 0.5  
+- Operation 4 → B runs out first → probability 0  
 
-The best movement paths are:
-
-- **Child 1 (green)**: `(0,0) → (1,1) → (2,2) → (3,3)`
-- **Child 2 (red)**: `(0,3) → (1,2) → (2,3) → (3,3)`
-- **Child 3 (blue)**: `(3,0) → (3,1) → (3,2) → (3,3)`
-
-Collected fruits:
-- Green: 1 + 6 + 11 + 16  
-- Red: 4 + 8 + 12  
-- Blue: 13 + 14 + 15  
-→ Total = **100**
+Result = 0.25 × (1 + 1 + 0.5 + 0) = **0.625**
 
 ---
 
 ### Example 2:
 
 **Input:**  
-`fruits = [[1,1],[1,1]]`
+`n = 100`
 
 **Output:**  
-`4`
-
-**Explanation:**
-
-- **Child 1**: `(0,0) → (1,1)`
-- **Child 2**: `(0,1) → (1,1)`
-- **Child 3**: `(1,0) → (1,1)`
-
-Fruits collected: 1 (from each starting room) + 1 (from final room) = **4**
+`0.71875`
 
 ---
-

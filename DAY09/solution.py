@@ -1,11 +1,9 @@
 class Solution:
-    def isPowerOfTwo(self, n: int) -> bool:
-        if n <= 0:
-            return False
-        i=0
-        while 2**i <= n:
-            if 2**i == n:
-                return True
-            i+=1
-        return False
+    def reorderedPowerOf2(self, n: int) -> bool:
+
+        def reorder(x):
+            return ''.join(sorted(str(x)))
+
+        powers_check = {reorder(1 << i) for i in range (31)}
+        return reorder(n) in powers_check
         

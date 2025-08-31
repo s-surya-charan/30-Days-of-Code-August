@@ -1,46 +1,65 @@
-# Day 18 - 24 Game  
+# Day 19 - Number of Zero-Filled Subarray
 
-**Problem Link:** [LeetCode 679 - 24 Game](https://leetcode.com/problems/24-game/)  
-
----
-
-You are given an integer array `cards` of length **4**.  
-Each card contains a number in the range **[1, 9]**.  
-
-You should arrange the numbers on these cards in a **mathematical expression** using the operators  
-`['+', '-', '*', '/']` and parentheses `(` and `)` to get the value **24**.  
+**Problem Link:** [LeetCode 2348 - Number of Zero-Filled Subarrays](https://leetcode.com/problems/number-of-zero-filled-subarrays/)
 
 ---
 
-### Rules & Restrictions:
-- Division `'/'` represents **real division**, not integer division.  
-  - Example: `4 / (1 - 2 / 3) = 4 / (1/3) = 12`.  
-- Every operation is **between two numbers**.  
-  - Unary operations like `-1 - 1 - 1 - 1` are **not allowed**.  
-- Numbers cannot be concatenated.  
-  - Example: `[1,2,1,2] → "12 + 12"` is **invalid**.  
+You are given an integer array **nums**.
+A **subarray** is a contiguous non-empty sequence of elements within an array.
 
-Return **true** if you can form an expression that evaluates to **24**, otherwise **false**.  
+A subarray is called a **zero-filled subarray** if **all elements** in that subarray are `0`.
+
+Return the **total number of zero-filled subarrays** in `nums`.
 
 ---
 
 ### Example 1:
-**Input:**  
-`cards = [4,1,8,7]`  
 
-**Output:**  
-`true`  
+**Input:**
+`nums = [1,3,0,0,2,0,0,4]`
 
-**Explanation:**  
-`(8 - 4) * (7 - 1) = 24`  
+**Output:**
+`6`
+
+**Explanation:**
+There are 4 subarrays with a single 0, and 2 subarrays with consecutive 0s:
+
+* `[0]` (at index 2)
+* `[0]` (at index 3)
+* `[0,0]` (indexes 2–3)
+* `[0]` (at index 5)
+* `[0]` (at index 6)
+* `[0,0]` (indexes 5–6)
+
+Total = 6.
 
 ---
 
 ### Example 2:
-**Input:**  
-`cards = [1,2,1,2]`  
 
-**Output:**  
-`false`  
+**Input:**
+`nums = [0,0,0,2,0,0]`
+
+**Output:**
+`9`
+
+**Explanation:**
+
+* Subarrays with single 0: 4
+* Subarrays with two 0s: 3
+* Subarrays with three 0s: 1
+* Subarray with two 0s (at end): 1
+
+Total = 9.
+
+---
+
+### Example 3:
+
+**Input:**
+`nums = [2,10,2019]`
+
+**Output:**
+`0`
 
 ---

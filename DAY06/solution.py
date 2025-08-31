@@ -1,40 +1,47 @@
-from typing import List
-
 class Solution:
-    def numOfUnplacedFruits(self, fruits: List[int], baskets: List[int]) -> int:
-        self.n = len(baskets)
-        # 1-indexed segment tree array for simplicity
-        self.seg = [0] * (4 * self.n)
-        self._build(baskets, 0, self.n - 1, 1)
+    def maxCollectedFruits(self, fruits: List[List[int]]) -> int:
+        n = len(fruits)
+        total = 0
 
-        unplaced = 0
-        for f in fruits:
-            if self._find_and_use(f, 0, self.n - 1, 1) == -1:
-                unplaced += 1
-        return unplaced
+        # Step 1: Diagonal contribution (child 1 from top-left to bottom-right)
+        for i in range(n):
+            total += fruits[i][i]
 
-    def _build(self, baskets: List[int], low: int, high: int, idx: int):
-        if low == high:
-            self.seg[idx] = baskets[low]
-        else:
-            mid = (low + high) // 2
-            self._build(baskets, low, mid, idx * 2)
-            self._build(baskets, mid + 1, high, idx * 2 + 1)
-            self.seg[idx] = max(self.seg[idx * 2], self.seg[idx * 2 + 1])
+        # Step 2: Handle child 2 (top-right to bottom-right) and child bottom-left to bottom-right)
+        for pass_num in range(2):
+            # For second pass (child 3), transpose the grid to reuse logic
+            if pass_num == 1:
+                for i in range(n):
+                    for j in range(i + 1, n):
+                        fruits[i][j], fruits[j][i] = fruits[j][i], fruits[i][j]
 
-    def _find_and_use(self, fruit: int, low: int, high: int, idx: int) -> int:
-        # If this segment cannot fit the fruit
-        if self.seg[idx] < fruit:
-            return -1
-        # If we're at a leaf, use it
-        if low == high:
-            self.seg[idx] = -1
-            return 1
-        mid = (low + high) // 2
-        if self.seg[idx * 2] >= fruit:
-            res = self._find_and_use(fruit, low, mid, idx * 2)
-        else:
-            res = self._find_and_use(fruit, mid + 1, high, idx * 2 + 1)
-        # Update this node after child has changed
-        self.seg[idx] = max(self.seg[idx * 2], self.seg[idx * 2 + 1])
-        return res
+            # Initialize DP arrays: prev holds max fruits till previous row
+            prev = [-1] * n
+            prev[n - 1] = fruits[0][n - 1]  # Starting position for child 2 or transposed child 3
+
+            # Iterate through rows 1 to n-2 (excluding destination cell)
+            for row in range(1, n - 1):
+                curr = [-1] * n  # Temp array to store current row's DP values
+                for col in range(n):
+                    if prev[col] == -1:
+                        continue  # Skip invalid paths
+
+                    # Move straight down
+                    curr[col] = max(curr[col], prev[col] + fruits[row][col])
+
+                    # Move left
+                    if col > 0:
+                        curr[col - 1] = max(curr[col - 1], prev[col] + fruits[row][col - 1])
+
+                    # Move right
+                    if col < n - 1:
+                        curr[col + 1] = max(curr[col + 1], prev[col] + fruits[row][col + 1])
+
+                # Swap for next iteration
+                prev = curr
+
+            # Add the max fruits collected upon reaching (n-1, n-1)
+            total += prev[n - 1]
+
+        return total
+        

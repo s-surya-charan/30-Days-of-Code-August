@@ -1,58 +1,60 @@
-# Day 29 - Alice and Bob Playing Flower Game
+# Day 30 - Valid Sudoku
 
-**Problem Link:** [LeetCode 3021 - Alice and Bob Playing Flower Game](https://leetcode.com/problems/alice-and-bob-playing-flower-game/)
+**Problem Link:** [LeetCode 36 - Valid Sudoku](https://leetcode.com/problems/valid-sudoku/)
 
 ---
 
 ## Problem Statement
 
-Alice and Bob are playing a turn-based game on a field with **two lanes of flowers** between them.  
+Determine if a `9 x 9` Sudoku board is valid. Only the filled cells need to be validated according to the following rules:
 
-- There are `x` flowers in the first lane.  
-- There are `y` flowers in the second lane.  
+1. Each row must contain the digits `1-9` **without repetition**.  
+2. Each column must contain the digits `1-9` **without repetition**.  
+3. Each of the nine `3 x 3` sub-boxes of the grid must contain the digits `1-9` **without repetition**.  
 
-The game proceeds as follows:
-
-1. Alice takes the **first turn**.  
-2. In each turn, a player must **choose one of the lanes** and pick **one flower** from that lane.  
-3. If after a turn, **there are no flowers left at all**, the current player **captures their opponent** and **wins the game**.  
-
-You are given two integers `n` and `m`.  
-
-- The number of flowers `x` in the first lane must be in the range `[1, n]`.  
-- The number of flowers `y` in the second lane must be in the range `[1, m]`.  
-
-Return the number of possible pairs `(x, y)` such that **Alice wins the game**.
+> Note:
+> - A Sudoku board (partially filled) could be valid but is not necessarily solvable.
+> - Only the filled cells need to be validated.
 
 ---
 
 ## Example 1
 
 **Input:**
-`n = 3, m = 2`
+board = [
+ ["5","3",".",".","7",".",".",".","."],
+ ["6",".",".","1","9","5",".",".","."],
+ [".","9","8",".",".",".",".","6","."],
+ ["8",".",".",".","6",".",".",".","3"],
+ ["4",".",".","8",".","3",".",".","1"],
+ ["7",".",".",".","2",".",".",".","6"],
+ [".","6",".",".",".",".","2","8","."],
+ [".",".",".","4","1","9",".",".","5"],
+ [".",".",".",".","8",".",".","7","9"]
+]
 
 **Output:**
-`3`
 
-**Explanation:**
-- The following pairs satisfy the conditions:
-- (1, 2)
-- (3, 2)
-- (2, 1)
+true
 
 ---
 
 ## Example 2
-**Input:**
 
-`n = 1, m = 1`
+board = [
+ ["8","3",".",".","7",".",".",".","."],
+ ["6",".",".","1","9","5",".",".","."],
+ [".","9","8",".",".",".",".","6","."],
+ ["8",".",".",".","6",".",".",".","3"],
+ ["4",".",".","8",".","3",".",".","1"],
+ ["7",".",".",".","2",".",".",".","6"],
+ [".","6",".",".",".",".","2","8","."],
+ [".",".",".","4","1","9",".",".","5"],
+ [".",".",".",".","8",".",".","7","9"]
+]
 
-**Output:**
+**Output**
 
-`0`
+false
 
-**Explanation:**
-
-- No pairs satisfy the conditions described in the statement.
 ---
-

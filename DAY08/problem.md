@@ -1,59 +1,60 @@
-# Day 8 - Soup Servings
+# Day 9 - Power of Two
 
 **Problem Link:**  
-[LeetCode 808 - Soup Servings](https://leetcode.com/problems/soup-servings/)
+[LeetCode 231 - Power of Two](https://leetcode.com/problems/power-of-two/)
 
 ---
 
-You have **two soups**, `A` and `B`, each starting with `n` mL. On each turn, one of the following four serving operations is chosen **at random**, each with probability **0.25**:
+Given an integer `n`, return **true** if it is a **power of two**. Otherwise, return **false**.
 
-1. Pour **100 mL** from **A** and **0 mL** from **B**  
-2. Pour **75 mL** from **A** and **25 mL** from **B**  
-3. Pour **50 mL** from **A** and **50 mL** from **B**  
-4. Pour **25 mL** from **A** and **75 mL** from **B**
+An integer `n` is a power of two if there exists an integer `x` such that:
+
+\[
+n = 2^x
+\]
 
 ---
 
 ### Rules:
 
-- If the operation requires more soup than remains in either type, you pour **all that remains**.
-- The amounts are poured **simultaneously** during that turn.
-- The process stops **when either soup runs out**.
-- If **both run out in the same turn**, it's considered a **tie**.
-
----
-
-### Return:
-
-The **probability** that **soup A runs out first**, **plus** **half** the probability that **both run out simultaneously**.
-
-*Answers within `10^-5` of the true value are accepted.*
+- `n` must be **positive**.
+- Powers of two follow the sequence: `1, 2, 4, 8, 16, 32, ...`.
+- Return **true** if `n` is in this sequence, otherwise **false**.
 
 ---
 
 ### Example 1:
 
 **Input:**  
-`n = 50`
+`n = 1`
 
 **Output:**  
-`0.62500`
+`true`
 
 **Explanation:**  
-- Operations 1 & 2 → A runs out first → probability 1  
-- Operation 3 → both run out → probability 0.5  
-- Operation 4 → B runs out first → probability 0  
-
-Result = 0.25 × (1 + 1 + 0.5 + 0) = **0.625**
+\( 2^0 = 1 \)
 
 ---
 
 ### Example 2:
 
 **Input:**  
-`n = 100`
+`n = 16`
 
 **Output:**  
-`0.71875`
+`true`
+
+**Explanation:**  
+\( 2^4 = 16 \)
+
+---
+
+### Example 3:
+
+**Input:**  
+`n = 3`
+
+**Output:**  
+`false`
 
 ---

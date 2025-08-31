@@ -1,25 +1,28 @@
-# Day 9 - Power of Two
+# Day 10 - Reordered Power of 2
 
 **Problem Link:**  
-[LeetCode 231 - Power of Two](https://leetcode.com/problems/power-of-two/)
+[LeetCode 869 - Reordered Power of 2](https://leetcode.com/problems/reordered-power-of-2/)
 
 ---
 
-Given an integer `n`, return **true** if it is a **power of two**. Otherwise, return **false**.
+You are given an integer `n`. You may reorder the digits of `n` in any order (including the original order) such that the resulting number has **no leading zeros**.
 
-An integer `n` is a power of two if there exists an integer `x` such that:
-
-\[
-n = 2^x
-\]
+Return **true** if and only if you can reorder the digits of `n` so that the resulting number is a **power of two**.
 
 ---
 
 ### Rules:
 
-- `n` must be **positive**.
-- Powers of two follow the sequence: `1, 2, 4, 8, 16, 32, ...`.
-- Return **true** if `n` is in this sequence, otherwise **false**.
+- You may **permute** the digits of `n` arbitrarily.
+- The rearranged number **must not** have a leading zero.
+- Check whether **any** permutation forms a number equal to `2^x` for some integer `x ≥ 0`.
+
+---
+
+### Return:
+
+- `true` — if some valid permutation of the digits of `n` is a power of two.  
+- `false` — otherwise.
 
 ---
 
@@ -31,28 +34,12 @@ n = 2^x
 **Output:**  
 `true`
 
-**Explanation:**  
-\( 2^0 = 1 \)
-
 ---
 
 ### Example 2:
 
 **Input:**  
-`n = 16`
-
-**Output:**  
-`true`
-
-**Explanation:**  
-\( 2^4 = 16 \)
-
----
-
-### Example 3:
-
-**Input:**  
-`n = 3`
+`n = 10`
 
 **Output:**  
 `false`

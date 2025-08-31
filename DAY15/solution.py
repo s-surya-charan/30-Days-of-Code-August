@@ -1,7 +1,10 @@
 class Solution:
-    def isPowerOfFour(self, n: int) -> bool:
-        if n <= 0:
-            return False
-        while n % 4 == 0:
-            n //= 4
-        return n == 1
+    def maximum69Number (self, num: int) -> int:
+        num_array = list(str(num))
+
+        for i in range(len(num_array)):
+            if num_array[i] == '6':
+                num_array[i] = '9'
+                break
+        return int("".join(num_array))
+        

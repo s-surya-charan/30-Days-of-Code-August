@@ -1,65 +1,46 @@
-# Day 19 - Number of Zero-Filled Subarray
+# Day 20 - Count Square Submatrices with All Ones
 
-**Problem Link:** [LeetCode 2348 - Number of Zero-Filled Subarrays](https://leetcode.com/problems/number-of-zero-filled-subarrays/)
+**Problem Link:** [LeetCode 1277 - Count Square Submatrices with All Ones](https://leetcode.com/problems/count-square-submatrices-with-all-ones/)
 
 ---
 
-You are given an integer array **nums**.
-A **subarray** is a contiguous non-empty sequence of elements within an array.
-
-A subarray is called a **zero-filled subarray** if **all elements** in that subarray are `0`.
-
-Return the **total number of zero-filled subarrays** in `nums`.
+You are given an m x n matrix of ones and zeros. Return how many square submatrices have all ones.
 
 ---
 
 ### Example 1:
 
 **Input:**
-`nums = [1,3,0,0,2,0,0,4]`
-
-**Output:**
-`6`
-
-**Explanation:**
-There are 4 subarrays with a single 0, and 2 subarrays with consecutive 0s:
-
-* `[0]` (at index 2)
-* `[0]` (at index 3)
-* `[0,0]` (indexes 2–3)
-* `[0]` (at index 5)
-* `[0]` (at index 6)
-* `[0,0]` (indexes 5–6)
-
-Total = 6.
+matrix =
+[
+  [0,1,1,1],
+  [1,1,1,1],
+  [0,1,1,1]
+]
+**Output:** 15  
+**Explanation:**  
+There are 10 squares of side 1.  
+There are 4 squares of side 2.  
+There is 1 square of side 3.  
+Total number of squares = 10 + 4 + 1 = 15.
 
 ---
 
 ### Example 2:
 
 **Input:**
-`nums = [0,0,0,2,0,0]`
-
-**Output:**
-`9`
-
-**Explanation:**
-
-* Subarrays with single 0: 4
-* Subarrays with two 0s: 3
-* Subarrays with three 0s: 1
-* Subarray with two 0s (at end): 1
-
-Total = 9.
+matrix = 
+[
+  [1,0,1],
+  [1,1,0],
+  [1,1,0]
+]
+**Output:** 7  
+**Explanation:**  
+There are 6 squares of side 1.  
+There is 1 square of side 2.  
+Total number of squares = 6 + 1 = 7.
 
 ---
 
-### Example 3:
-
-**Input:**
-`nums = [2,10,2019]`
-
-**Output:**
-`0`
-
----
+#

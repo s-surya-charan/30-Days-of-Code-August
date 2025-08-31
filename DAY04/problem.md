@@ -1,60 +1,53 @@
-# Day 4 - Fruit Into Baskets
+# Day 5 - Fruits Into Baskets II
 
 **Problem Link:**  
-https://leetcode.com/problems/fruit-into-baskets/
+https://leetcode.com/problems/fruits-into-baskets-ii/
 
-You are visiting a farm that has a single row of fruit trees arranged from left to right. The trees are represented by an integer array `fruits` where `fruits[i]` is the type of fruit the `iᵗʰ` tree produces.
+You are given two arrays of integers, `fruits` and `baskets`, each of length `n`, where:
 
-You want to collect as much fruit as possible. However, the owner has some strict rules:
+- `fruits[i]` represents the quantity of the `iᵗʰ` type of fruit
+- `baskets[j]` represents the capacity of the `jᵗʰ` basket
 
-- You only have **two baskets**, and each basket can only hold **one type** of fruit.
-- There is **no limit** on the amount of fruit each basket can hold.
-- You can start at **any tree** and must pick exactly one fruit from every tree (including the start tree) while moving **to the right**.
-- The picked fruits must **fit in one of your baskets**.
-- Once you reach a tree with a fruit type that doesn't fit in your baskets, you must **stop**.
+From **left to right**, place the fruits into baskets according to the following rules:
 
-Return the **maximum number of fruits** you can pick.
+- Each fruit type must be placed in the **leftmost available** basket with a **capacity greater than or equal to** the quantity of that fruit type.
+- Each basket can hold **only one type of fruit**.
+- If a fruit type **cannot be placed** in any basket, it remains **unplaced**.
+
+Return the **number of fruit types** that remain unplaced after all possible allocations are made.
 
 ---
 
 ### Example 1:
 
 **Input:**  
-fruits = [1, 2, 1]  
+fruits = [4, 2, 5]  
+baskets = [3, 5, 4]  
 
 **Output:**  
-3
+1
 
 **Explanation:**  
-We can pick from all 3 trees → [1, 2, 1]
+- fruits[0] = 4 → placed in baskets[1] = 5  
+- fruits[1] = 2 → placed in baskets[0] = 3  
+- fruits[2] = 5 → cannot be placed in baskets[2] = 4  
+→ One fruit type is unplaced.
 
 ---
 
 ### Example 2:
 
 **Input:**  
-fruits = [0, 1, 2, 2]  
+fruits = [3, 6, 1]  
+baskets = [6, 4, 7]  
 
 **Output:**  
-3
+0
 
 **Explanation:**  
-We can pick from trees [1, 2, 2].  
-If we started at the first tree, we could only pick from [0, 1].
+- fruits[0] = 3 → placed in baskets[0] = 6  
+- fruits[1] = 6 → cannot go in baskets[1] = 4, but fits in baskets[2] = 7  
+- fruits[2] = 1 → placed in baskets[1] = 4  
+→ All fruits are placed successfully.
 
 ---
-
-### Example 3:
-
-**Input:**  
-fruits = [1, 2, 3, 2, 2]  
-
-**Output:**  
-4
-
-**Explanation:**  
-We can pick from trees [2, 3, 2, 2].  
-If we started at the beginning, we could only collect from [1, 2].
-
----
-
