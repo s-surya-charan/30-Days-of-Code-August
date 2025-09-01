@@ -3,9 +3,8 @@ class Solution:
         M = 10**9 + 7
         powers = []
         
-        # Build powers array
         for i in range(32):
-            if (n & (1 << i)) != 0:  # ith bit is set
+            if (n & (1 << i)) != 0: 
                 powers.append(1 << i)
         
         result = []
