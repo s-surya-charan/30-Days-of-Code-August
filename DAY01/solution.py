@@ -6,7 +6,6 @@ class Solution:
         mp = Counter()
         minEl = float('inf')
         
-        # Count frequency differences between baskets
         for x in basket1:
             mp[x] += 1
             minEl = min(minEl, x)
