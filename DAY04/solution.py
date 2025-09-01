@@ -5,6 +5,6 @@ class Solution:
             for j in range(len(baskets)):
                 if baskets[j] >= fruits[i]:
                     baskets[j] = 0
-                    count += 1
+                    count += 1 
                     break
         return len(fruits) - count
