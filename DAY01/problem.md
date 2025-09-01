@@ -1,5 +1,5 @@
 # Day 2 - Rearranging Fruits
-
+ 
 **Problem Link:**  
 https://leetcode.com/problems/rearranging-fruits/description/
 
