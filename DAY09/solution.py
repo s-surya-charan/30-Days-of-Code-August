@@ -6,4 +6,4 @@ class Solution:
 
         powers_check = {reorder(1 << i) for i in range (31)}
         return reorder(n) in powers_check
-        
+         
