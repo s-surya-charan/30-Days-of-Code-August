@@ -3,7 +3,7 @@ from collections import defaultdict
 
 class Solution:
     def totalFruit(self, fruits: List[int]) -> int:
-        n = len(fruits)
+        n = len(fruits) 
         hashmap = defaultdict(int)
         i = 0
         count = 0
