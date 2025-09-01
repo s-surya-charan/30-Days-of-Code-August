@@ -6,7 +6,7 @@
   </a>
 </p>
 
-<hr>
+<hr> 
 
 <p>
   You are given a string <code>num</code> representing a large integer.<br>
