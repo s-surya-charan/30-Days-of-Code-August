@@ -4,7 +4,7 @@ class Solution:
             return False
         power = 1
         while power < n:
-            power *= 3
+            power *= 3 
         return power == n
         
         
