@@ -1,6 +1,6 @@
 # Day 1 - Pascal's Triangle
 
-**Problem Link:**  
+**Problem Link:**   
 https://leetcode.com/problems/pascals-triangle/?envType=daily-question&envId=2025-08-02
 
 Given an integer `numRows`, return the first `numRows` of Pascal's triangle.
