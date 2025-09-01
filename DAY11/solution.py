@@ -1,6 +1,6 @@
 MOD = 10 ** 9 + 7
 class Solution:
-    def numberOfWays(self, n: int, x: int) -> int:
+    def numberOfWays(self, n: int, x: int) -> int: 
         powers = []
         i = 1
         while True:
