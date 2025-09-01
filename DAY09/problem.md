@@ -3,7 +3,7 @@
 **Problem Link:**  
 [LeetCode 869 - Reordered Power of 2](https://leetcode.com/problems/reordered-power-of-2/)
 
----
+--- 
 
 You are given an integer `n`. You may reorder the digits of `n` in any order (including the original order) such that the resulting number has **no leading zeros**.
 
