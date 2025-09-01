@@ -1,7 +1,7 @@
 # Day 11 - Range Product Queries of Powers
 
 **Problem Link:**  
-[LeetCode 2438 - Range Product Queries of Powers](https://leetcode.com/problems/range-product-queries-of-powers/)
+[LeetCode 2438 - Range Product Queries of Powers](https://leetcode.com/problems/range-product-queries-of-powers/) 
 
 ---
 
