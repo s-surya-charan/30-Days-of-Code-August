@@ -6,7 +6,7 @@ class Solution:
         n = len(grid)
         diag = defaultdict(list)
 
-        for i in range(n):
+        for i in range(n): 
             for j in range(n):
                 diag[i - j].append(grid[i][j])
 
