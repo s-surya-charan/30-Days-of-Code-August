@@ -8,7 +8,7 @@ class Solution:
 
             while zeros > 1:
                 if nums[left] == 0:
-                    zeros -= 1
+                    zeros -= 1 
                 left += 1
             
             res = max(res, right - left)
