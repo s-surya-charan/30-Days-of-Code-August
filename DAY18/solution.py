@@ -9,4 +9,4 @@ class Solution:
                 total_count += count
             else:
                 count = 0
-        return total_count
+        return total_count 
