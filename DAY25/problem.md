@@ -1,6 +1,6 @@
 # Day 26 - Maximum Area of Longest Diagonal Rectangle
 
-**Problem Link:** [LeetCode 3000 - Maximum Area of Longest Diagonal Rectangle](https://leetcode.com/problems/maximum-area-of-longest-diagonal-rectangle/)
+**Problem Link:** [LeetCode 3000 - Maximum Area of Longest Diagonal Rectangle](https://leetcode.com/problems/maximum-area-of-longest-diagonal-rectangle/) 
 
 ---
 
