@@ -1,4 +1,4 @@
-# Day 30 - Sudoku Solver
+# Day 31 - Sudoku Solver
 
 **Problem Link:** [LeetCode 37 - Sudoku Solver](https://leetcode.com/problems/sudoku-solver/)
 
