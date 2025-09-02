@@ -3,7 +3,7 @@
 **Problem Link:**  
 [LeetCode 342 - Power of Four](https://leetcode.com/problems/power-of-four/)
 
----
+--- 
 
 Given an integer `n`, return **true** if it is a **power of four**, otherwise return **false**.  
 
