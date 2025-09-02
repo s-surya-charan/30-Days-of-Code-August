@@ -6,5 +6,5 @@ class Solution:
             if num_array[i] == '6':
                 num_array[i] = '9'
                 break
-        return int("".join(num_array))
+        return int("".join(num_array)) 
         
