@@ -7,7 +7,7 @@
 Alice plays a game loosely based on the card game **"21"**:  
 
 - Alice starts with **0 points**.  
-- While she has **less than `k` points**, she continues drawing numbers.  
+- While she has **less than `k` points**, she continues drawing numbers.   
 - Each draw gives a random integer from **[1, maxPts]** (inclusive), all equally likely.  
 - Alice **stops drawing** once she reaches **k or more** points.  
 
