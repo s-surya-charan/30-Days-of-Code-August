@@ -8,7 +8,7 @@ class Solution:
             for j in range(n):
                 if mat[i][j] == 1:
                     heights[j] += 1
-                else:
+                else: 
                     heights[j] = 0
 
             for j in range(n):
