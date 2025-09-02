@@ -5,7 +5,7 @@ class Solution:
         maxx = -1.0
         res = 0
 
-        for l, b in dimensions:
+        for l, b in dimensions: 
             d = math.sqrt(l * l + b * b)
 
             if d > maxx:
