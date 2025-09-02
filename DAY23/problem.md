@@ -5,7 +5,7 @@
 ---
 
 You are given a **binary array** `nums`.
-
+ 
 You must **delete exactly one element** from it.
 
 Return the size of the **longest non-empty subarray containing only `1's`** in the resulting array.
