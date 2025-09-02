@@ -3,7 +3,7 @@
 **Problem Link:** [LeetCode 1277 - Count Square Submatrices with All Ones](https://leetcode.com/problems/count-square-submatrices-with-all-ones/)
 
 ---
-
+ 
 You are given an m x n matrix of ones and zeros. Return how many square submatrices have all ones.
 
 ---
