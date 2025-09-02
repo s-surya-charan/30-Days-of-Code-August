@@ -3,7 +3,7 @@
 **Problem Link:** [LeetCode 1504 - Count Submatrices With All Ones](https://leetcode.com/problems/count-submatrices-with-all-ones/)
 
 ---
-
+ 
 You are given an `m x n` **binary matrix** `mat`.
 Return the **number of submatrices that have all ones**.
 
