@@ -4,7 +4,7 @@ class Solution:
             return []
         
         m, n = len(mat), len(mat[0])
-        result = []
+        result = [] 
         row, col = 0, 0
         direction = 1
         
