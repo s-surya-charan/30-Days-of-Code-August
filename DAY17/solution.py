@@ -4,7 +4,7 @@ from typing import List
 class Solution:
     def judgePoint24(self, cards: List[int]) -> bool:
         EPSILON = 1e-6
-        
+         
         def helper(nums):
             if len(nums) == 1:
                 return abs(nums[0] - 24) < EPSILON
