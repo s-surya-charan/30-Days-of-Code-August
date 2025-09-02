@@ -7,7 +7,7 @@ class Solution:
     def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
         n, m = len(grid), len(grid[0])
 
-        def isOutside(i, j):
+        def isOutside(i, j): 
             return i < 0 or i >= n or j < 0 or j >= m
 
         @lru_cache(None)  
