@@ -4,7 +4,7 @@ class Solution:
         A=[0]*n
         T=[0]*m
         def build_A_T():
-            for i, row in enumerate(grid):
+            for i, row in enumerate(grid): 
                 for j, x in enumerate(row):
                     if x==0: continue
                     A[i]|=(1<<j)
