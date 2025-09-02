@@ -12,7 +12,7 @@ class Solution:
             dp[i] = windowSum / maxPts
 
             if i < k:
-                windowSum += dp[i]
+                windowSum += dp[i] 
             else:
                 res += dp[i]
             left = i - maxPts
