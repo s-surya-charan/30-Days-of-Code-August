@@ -7,7 +7,7 @@
 You are given a **2D binary array** `grid`.
 
 You need to find **3 non-overlapping rectangles** with horizontal and vertical sides, each having a **non-zero area**, such that **all the 1's in `grid` lie inside these rectangles**.
-
+ 
 Return the **minimum possible sum of the areas** of these rectangles.
 
 > Note: The rectangles are allowed to **touch** but cannot overlap.
