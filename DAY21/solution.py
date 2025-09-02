@@ -10,6 +10,6 @@ class Solution:
                     max_row = max(max_row, i)
                     min_col = min(min_col, j)
                     max_col = max(max_col, j)
-                    height = max_row - min_row + 1
+                    height = max_row - min_row + 1 
                     width = max_col - min_col + 1
         return height * width
